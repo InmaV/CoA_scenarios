@@ -26,48 +26,10 @@ can preserve fetal blood pressures, organ perfusion, and wall shear stress despi
 | `functions_to_import_CoA.py` | Helper functions used by the simulation and analysis workflow. |
 | `CoA_combined_defects.ipynb` | Notebook for generating and analysing combinations of AoI narrowing, ventricular disproportion, and DA dilation. |
 | `Read_results.ipynb` | Notebook for reading, post-processing, and visualising simulation results. |
-| `Dataset_S1.xlsx` | Supplementary dataset associated with the study. |
-| `Dataset_S2.csv` | Supplementary dataset associated with the study. |
+| `Dataset_S1.xlsx` | Clinical data and measurements from real CoA cases. |
+| `Dataset_S2.csv` | Doppler velocities from healthy clinical cases. |
 | `LICENSE` | GNU General Public License, version 2 or any later version. |
 
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/InmaV/CoA_scenarios.git
-cd CoA_scenarios
-```
-
-A Python environment with the standard scientific-computing packages is required. One possible setup is:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate        # macOS/Linux
-# .venv\Scripts\activate         # Windows
-
-pip install numpy pandas scipy matplotlib jupyter openpyxl
-```
-
-The repository does not currently include a pinned dependency file. Package requirements may therefore depend on the Python and Jupyter versions used. If a missing-package error occurs, install the package named in the corresponding import statement.
-
-A compatible C compiler may also be required if the solver or C model needs to be rebuilt on the local system.
-
-## Running the simulations
-
-Launch Jupyter from the repository root:
-
-```bash
-jupyter lab
-```
-
-The intended workflow is:
-
-1. Open `CoA_combined_defects.ipynb` to configure and run the combined CoA remodeling scenarios.
-2. Use `CoA_simulation.py` and `functions_to_import_CoA.py` as the simulation and helper modules required by the workflow.
-3. Open `Read_results.ipynb` to load the generated results, calculate derived hemodynamic variables, and reproduce the analyses and visualisations.
-
-Run the notebooks from the repository root so that their relative paths resolve correctly. Local paths, solver permissions, and output directories may need to be adapted to the operating system.
 
 ## Simulated CoA remodeling
 
@@ -110,24 +72,15 @@ For reproducible analyses:
 
 ## Citation
 
-Please cite the archived model when using this repository:
+When using this repository, please cite both the archived model and the associated scientific publication.
+
+### Archived model
 
 > Villanueva, I., Pellisé, A., & Bernardino, G. (2024). *Coarctation of the aorta model*. Zenodo. https://doi.org/10.5281/zenodo.14826951
 
-### BibTeX
+### Scientific publication
 
-```bibtex
-@misc{CoA2024,
-  author    = {Villanueva, Inmaculada and Pellis{\'e}, Anna and Bernardino, Gabriel},
-  title     = {Coarctation of the aorta model},
-  year      = {2024},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.14826951},
-  url       = {https://doi.org/10.5281/zenodo.14826951}
-}
-```
-
-When applicable, please also cite the associated scientific publication describing the model, validation, and CoA remodeling analysis.
+> Villanueva-Baxarias, I., Pellisé-Tintoré, A., Pérez-Rodríguez, M., Nogué, L., Vaziraani, P., Soveral, I., Crispi, F., Gómez, O., Garcia-Canadilla, P., Camara, O., Bijnens, B., & Bernardino, G. (2025). Understanding the hemodynamic changes in fetuses with coarctation of the aorta using a lumped model of fetal circulation. *PLOS Computational Biology, 21*, e1013096. https://doi.org/10.1371/journal.pcbi.1013096
 
 ## License
 
